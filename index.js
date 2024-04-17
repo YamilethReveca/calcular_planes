@@ -1,22 +1,22 @@
 
 
-const montoUsuario = document.getElementById('montoUsuario');
-const optionesPlanes = document.getElementById('optionesPlanes');
+const amountEntered = document.getElementById('formGroupExampleInput');
+const planOptions = document.getElementById('planOptions');
 let comisionInfo = document.getElementById('comisionInfo');
 const calcularComisionBtn = document.getElementById('calcularComision');
 
-optionesPlanes.addEventListener('click', function() {
-  const valorProducto = parseFloat(montoUsuario.value);
-  const planSeleccionado = parseFloat(optionesPlanes.value);
-  const comision = valorProducto * (planSeleccionado / 100);
+planOptions.addEventListener('click', function () {
+  const valorProducto = parseFloat(formGroupExampleInput.value);
+  const selectedPlan = parseFloat(planOptions.value);
+  const comision = valorProducto * (selectedPlan / 100);
   const iva = comision * 0.19; // Calculando el IVA del 19%
   const totalAPagar = Math.round(comision + iva);
 
-  comisionInfo.innerHTML="$"+totalAPagar.toLocaleString();
+  comisionInfo.innerHTML = "$" + totalAPagar.toLocaleString();
 
- 
+
   console.log(valorProducto)
-  console.log(planSeleccionado)
+  console.log(selectedPlan)
   console.log(comision)
   console.log(iva)
   console.log(totalAPagar)
@@ -24,17 +24,26 @@ optionesPlanes.addEventListener('click', function() {
 })
 
 
-function mostrarPlanSeleccionado() {
-  const optionesPlanes = document.getElementById('optionesPlanes');
-  const planSeleccionado = document.getElementById('planSeleccionado');
+function showSelectedPlan() {
+  const planOptions = document.getElementById('planOptions');//
+  const selectedPlan = document.getElementById('selectedPlan');// DIV QUE MUESTRA
 
-  // Obtener el valor y el texto del plan seleccionado
-  const planValue = optionesPlanes.options[optionesPlanes.selectedIndex].value;
-  const planText = optionesPlanes.options[optionesPlanes.selectedIndex].text;
+  // Obtener el texto y el valor del plan seleccionado
+  const planText = planOptions.options[planOptions.selectedIndex].text;
+  const planValue = planOptions.options[planOptions.selectedIndex].value;
 
-  // Obtener el número de la opción seleccionada
-  const opcionSeleccionada = optionesPlanes.selectedIndex;
+  // Obtener el número de la opción seleccionada (1 para la opción 1, 2 para la opción 2, etc.)
+  const selectedOption = planOptions.selectedIndex ; // opcion seleccionada
 
-  // Mostrar el número y la descripción del plan seleccionado dentro de un círculo
-  planSeleccionado.innerHTML = `<i class="bi bi-${opcionSeleccionada}-circle"></i> ${planText} ${planValue}% + IVA`;
+  // Crear el contenido HTML para el plan seleccionado
+  const planHTML = `
+    <div class="plan-info">
+      <div class="plan-number">${selectedOption}</div>
+      <div class="plan-description">${planText}</div>
+    </div>
+    <div class="plan-commission">${planValue}% + IVA</div>
+  `;
+
+  // Establecer el contenido HTML en el div del plan seleccionado
+  selectedPlan.innerHTML = planHTML;
 }
