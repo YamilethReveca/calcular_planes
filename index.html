@@ -13,23 +13,20 @@
 
 <body>
   <section class="cuerpoCalculadora">
-    <div id="monto">
-      <label for="montoUsuario">Monto</label><br>
-      <p id="signoDinero">$</p>
-      <input type="text" id="montoUsuario">
+    <div class="mb-3">
+      <label for="formGroupExampleInput" class="form-label">Monto</label>
+      <input id="montoUsuario" type="text" class="form-control" id="formGroupExampleInput"
+        placeholder="$">
     </div>
-
-    <label for="optionesPlanes">Planes</label><br>
-    <select id="optionesPlanes" onchange="mostrarPlanSeleccionado()">
+    <label for="formGroupExampleInput" class="form-label">Planes</label>
+    <select id="optionesPlanes" class="form-select" onchange="mostrarPlanSeleccionado()">
+      <option value="" selected disabled hidden>Elige plan</option>
       <option value="2.74">Plan 24 Horas</option>
       <option value="2.59">Plan 72 Horas</option>
     </select>
-    <div id="planSeleccionado"></div>
-    
-    <label>Comisión</label>
-    <p id="comisionInfo">
-    </p>
-
+    <button id="planSeleccionado" type="button" class="btn btn-secondary btn-lg"></button>
+    <label for="formGroupExampleInput" class="form-label">Comisión</label>
+    <button id="comisionInfo" type="button" class="btn btn-primary btn-lg"></button>
   </section>
 
   <script type="text/javascript" src="index.js"></script>

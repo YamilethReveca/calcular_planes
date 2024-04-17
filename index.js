@@ -22,6 +22,8 @@ optionesPlanes.addEventListener('click', function() {
   console.log(totalAPagar)
   console.log(comisionInfo)
 })
+
+
 function mostrarPlanSeleccionado() {
   const optionesPlanes = document.getElementById('optionesPlanes');
   const planSeleccionado = document.getElementById('planSeleccionado');
@@ -30,6 +32,9 @@ function mostrarPlanSeleccionado() {
   const planValue = optionesPlanes.options[optionesPlanes.selectedIndex].value;
   const planText = optionesPlanes.options[optionesPlanes.selectedIndex].text;
 
+  // Obtener el número de la opción seleccionada
+  const opcionSeleccionada = optionesPlanes.selectedIndex;
+
   // Mostrar el número y la descripción del plan seleccionado dentro de un círculo
-  planSeleccionado.innerHTML = `<i class="bi bi-${optionesPlanes.selectedIndex + 1}-circle"></i> ${planText} ${planValue}% + IVA`;
+  planSeleccionado.innerHTML = `<i class="bi bi-${opcionSeleccionada}-circle"></i> ${planText} ${planValue}% + IVA`;
 }
