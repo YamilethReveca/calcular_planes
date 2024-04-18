@@ -1,5 +1,4 @@
 * {
-
   margin: 0;
   padding: 0;
   box-sizing: content-box;
@@ -11,11 +10,10 @@
   height: 100%;
   display: flex;
   margin-top: 100px;
-
 }
 
 .calculatorFormat {
-  width: 30%;
+  width: 20%;
   height: 405px;
   border: 2px solid #0000ff5c;
   border-radius: 20px;
@@ -23,13 +21,6 @@
   background-color: white;
   display: block;
   margin: 0 auto;
-}
-
-#comisionInfo {
-  width: 96%;
-  height: 64px;
-  border: 1px solid black;
-  border-radius: 5px;
 }
 
 #formGroupExampleInput {
@@ -57,24 +48,13 @@ input {
 #planOptions {
   width: 100%;
   height: 33px;
-  font-size: 16px;
+  font-size: 14px;
   text-align: center;
   background-color: #dcdbdba2;
   display: block;
 }
 
-#comisionInfo {
-  background-color: #d6ecf2;
-  color: black;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 28px;
-  margin-bottom: 10px;
-  border: none;
-}
-
-.selectedPlan{
+.selectedPlan {
   background-color: #f2f2f2;
   padding: 10px;
   border-radius: 10px;
@@ -83,12 +63,17 @@ input {
 }
 
 /* Estilos para el número del plan */
-.plan-number{
+.plan-number {
+  width: 30px;
+  height: 30px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   background-color: #0000ff5c;
   color: white;
   border-radius: 50%;
   font-size: 24px;
-  display: inline;
   margin-bottom: 10px;
 }
 
@@ -102,8 +87,23 @@ input {
 
 /* Estilos para la comisión del plan */
 .plan-commission {
-  font-weight: bold;
   text-align: left;
   font-size: 17px;
-  margin-left: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#comisionInfo {
+  background-color: #d6ecf2;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  margin-bottom: 10px;
+  border: none;
+  width: 96%;
+  height: 64px;
+  border-radius: 5px;
 }
